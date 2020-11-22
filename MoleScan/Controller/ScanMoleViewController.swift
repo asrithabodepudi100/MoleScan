@@ -9,10 +9,13 @@ import UIKit
 
 class ScanMoleViewController: UIViewController {
     @IBOutlet weak var takePhotoButton: UIButton!
+    @IBOutlet weak var instructionsBackgroundBox: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         takePhotoButton.layer.cornerRadius = 15
+        instructionsBackgroundBox.layer.cornerRadius = 15
+
         // Do any additional setup after loading the view.
     }
 }
