@@ -34,7 +34,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwa-q2-eh0">
                                 <rect key="frame" x="20" y="102" width="201" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="37"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="37"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -388,7 +388,7 @@
                                                             </connections>
                                                         </segmentedControl>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which option best describes your skin complexion?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGf-Zu-Lqc">
-                                                            <rect key="frame" x="15" y="7.9999999999999982" width="272.33333333333331" height="23.333333333333329"/>
+                                                            <rect key="frame" x="15" y="7.9999999999999982" width="272.66666666666669" height="23.333333333333329"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="23.329999999999998" id="UXb-jR-gst"/>
                                                             </constraints>
@@ -839,7 +839,7 @@
                                                         <constraint firstAttribute="bottom" secondItem="58f-zi-JJd" secondAttribute="bottom" constant="15" id="qM8-Ts-6Iw"/>
                                                     </constraints>
                                                 </view>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-sun-96" translatesAutoresizingMaskIntoConstraints="NO" id="B8i-2U-hIk">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen_Shot_2020-11-22_at_9.38.55_PM-removebg-preview" translatesAutoresizingMaskIntoConstraints="NO" id="B8i-2U-hIk">
                                                     <rect key="frame" x="8" y="27" width="54" height="47"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="54" id="0VB-6s-3p1"/>
@@ -1008,31 +1008,124 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPe-8j-KOI">
-                                <rect key="frame" x="109" y="761" width="207" height="53"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ngb-4Y-Xi1">
+                                <rect key="frame" x="90" y="761" width="248" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXZ-vU-uw8">
+                                        <rect key="frame" x="0.0" y="0.0" width="248" height="65"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="takePhotoButtonPressed:" destination="sc1-pA-Qu6" eventType="touchUpInside" id="0zV-PQ-oxc"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Take Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kaz-4W-Z5H">
+                                        <rect key="frame" x="28" y="13" width="141" height="39"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="28"/>
+                                        <color key="textColor" red="0.0" green="0.13019400840000001" blue="0.42292410139999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-camera-96" translatesAutoresizingMaskIntoConstraints="NO" id="Fyl-Zq-8l2">
+                                        <rect key="frame" x="189" y="13" width="43" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.63567966220000005" green="0.72557455299999996" blue="0.92899012569999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                <state key="normal" title="Take Photo       ">
-                                    <color key="titleColor" red="0.0" green="0.13019400840000001" blue="0.42292410139999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-camera-96" translatesAutoresizingMaskIntoConstraints="NO" id="Fyl-Zq-8l2">
-                                <rect key="frame" x="261" y="768" width="43" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iWc-hG-TaM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Scan Mole" image="BodyViewControllerIcon" selectedImage="BodyViewControllerIcon" id="lZ3-K2-YT5"/>
                     <connections>
-                        <outlet property="takePhotoButton" destination="OPe-8j-KOI" id="PTa-w9-8MX"/>
+                        <outlet property="bodyImageVIew" destination="Beg-NE-D8v" id="eQp-ha-vUJ"/>
+                        <outlet property="takePhotoButton" destination="kXZ-vU-uw8" id="7Wd-gD-RVK"/>
+                        <outlet property="takePhotoButtonBackgroundView" destination="Ngb-4Y-Xi1" id="sfn-rm-tha"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Zc-Fg-SPp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2059.3457943925232" y="921.38228941684667"/>
+            <point key="canvasLocation" x="1983.6448598130839" y="920.73434125269989"/>
+        </scene>
+        <!--DisplayDiagnosisViewController-->
+        <scene sceneID="Txv-mD-4jp">
+            <objects>
+                <viewController storyboardIdentifier="DisplayDiagnosisViewController" title="DisplayDiagnosisViewController" id="taU-3a-JES" customClass="DisplayDiagnosisViewController" customModule="MoleScan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HLM-CF-x6O">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="awO-6U-Bjl">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                            </imageView>
+                            <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cWv-Um-Yed">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cj1-cU-eFe">
+                                <rect key="frame" x="189" y="58" width="50" height="6"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="V2h-y6-wIC"/>
+                                    <constraint firstAttribute="height" constant="6" id="a7b-Pa-HLn"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gIe-7U-VKK">
+                                <rect key="frame" x="0.0" y="74" width="428" height="852"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The mole shown in the picture is benign." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYg-U2-dvy">
+                                        <rect key="frame" x="32" y="70" width="364" height="51"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wi0-Mk-Ui7">
+                                        <rect key="frame" x="332" y="32" width="58" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.63567966220000005" green="0.72557455299999996" blue="0.92899012569999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zde-uj-VVs">
+                                        <rect key="frame" x="32" y="129" width="364" height="197"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="D5b-f7-PjV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="awO-6U-Bjl" firstAttribute="leading" secondItem="HLM-CF-x6O" secondAttribute="leading" id="2RW-ZF-oSp"/>
+                            <constraint firstItem="gIe-7U-VKK" firstAttribute="leading" secondItem="HLM-CF-x6O" secondAttribute="leading" id="54w-92-cLC"/>
+                            <constraint firstAttribute="bottom" secondItem="gIe-7U-VKK" secondAttribute="bottom" id="6r3-sN-tf6"/>
+                            <constraint firstItem="gIe-7U-VKK" firstAttribute="trailing" secondItem="HLM-CF-x6O" secondAttribute="trailing" id="XDG-9f-f6i"/>
+                            <constraint firstItem="gIe-7U-VKK" firstAttribute="top" secondItem="D5b-f7-PjV" secondAttribute="top" constant="30" id="YQN-Ub-VP6"/>
+                            <constraint firstAttribute="trailing" secondItem="awO-6U-Bjl" secondAttribute="trailing" id="fYv-6a-M9T"/>
+                            <constraint firstItem="gIe-7U-VKK" firstAttribute="top" secondItem="cj1-cU-eFe" secondAttribute="bottom" constant="10" id="nsx-hK-T5K"/>
+                            <constraint firstItem="cj1-cU-eFe" firstAttribute="centerX" secondItem="HLM-CF-x6O" secondAttribute="centerX" id="p9G-BK-WFO"/>
+                            <constraint firstItem="awO-6U-Bjl" firstAttribute="top" secondItem="HLM-CF-x6O" secondAttribute="top" id="qz3-xy-Ulv"/>
+                            <constraint firstAttribute="bottom" secondItem="awO-6U-Bjl" secondAttribute="bottom" id="v7a-GL-gow"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backingImageView" destination="awO-6U-Bjl" id="XMw-24-fge"/>
+                        <outlet property="cardView" destination="gIe-7U-VKK" id="FgA-G9-kCg"/>
+                        <outlet property="cardViewTopConstraint" destination="YQN-Ub-VP6" id="nhE-hu-pkI"/>
+                        <outlet property="dimmerView" destination="cWv-Um-Yed" id="eCL-lW-CrS"/>
+                        <outlet property="handleView" destination="cj1-cU-eFe" id="Tio-ag-KXC"/>
+                        <outlet property="imageVIew" destination="Zde-uj-VVs" id="wLz-lA-Iyr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bvE-QD-CW7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2852.8037383177571" y="920.73434125269989"/>
         </scene>
         <!--Tab Bar-->
         <scene sceneID="1ZT-2I-iEv">
@@ -1066,17 +1159,17 @@
         <image name="MyDoctorsViewControllerIcon" width="29" height="31"/>
         <image name="RegionIcon" width="162.66667175292969" height="148"/>
         <image name="RiskAssessmentCategoryDivisonLine" width="225" height="1"/>
-        <image name="Screen Shot 2020-11-21 at 6.34.09 PM" width="476" height="726"/>
+        <image name="Screen Shot 2020-11-21 at 6.34.09 PM" width="186" height="276"/>
+        <image name="Screen_Shot_2020-11-22_at_9.38.55_PM-removebg-preview" width="408" height="310"/>
         <image name="icons8-camera-96" width="96" height="96"/>
         <image name="icons8-color-wheel-96" width="96" height="96"/>
         <image name="icons8-length-96" width="96" height="96"/>
         <image name="icons8-planner-96" width="96" height="96"/>
         <image name="icons8-prelum-96" width="96" height="96"/>
         <image name="icons8-ruler-96" width="96" height="96"/>
-        <image name="icons8-sun-96" width="96" height="96"/>
-        <image name="icons8-team-skin-type-7-96" width="96" height="96"/>
+        <image name="icons8-team-skin-type-7-96" width="194" height="184"/>
         <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
-        <image name="user-group-man-man" width="96" height="96"/>
+        <image name="user-group-man-man" width="196" height="200"/>
         <image name="woman-sunbathing" width="96" height="96"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

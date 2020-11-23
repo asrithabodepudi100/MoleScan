@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icons8-team-skin-type-7-96.png",
+      "filename" : "sammy-charney.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "sammy-charney@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "sammy-charney@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

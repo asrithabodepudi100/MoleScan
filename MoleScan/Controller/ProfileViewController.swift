@@ -5,6 +5,8 @@
 //  Created by Asritha Bodepudi on 11/18/20.
 //
 
+
+//MAKE CODE CLEANER TO INHERITENCE
 import UIKit
 
 protocol updateTableViewProtocol: class {
@@ -45,10 +47,6 @@ class ProfileViewController: UIViewController, updateTableViewProtocol, calculat
             defaults.set(20, forKey: "AgeBothTableViewCell")
         }
         calculateRisk()
-        
-        
-          
-   
     }
     func updateTableView() {
         riskAssessmentTableView.reloadData() // you do have an outlet of tableView I assume
@@ -73,7 +71,6 @@ class ProfileViewController: UIViewController, updateTableViewProtocol, calculat
             r *= MratConstants().FEMALE_SMALL_MOLES[(defaults.integer(forKey: "MolesLessThan5mmBothTableViewCell"))]
             r *= MratConstants().FEMALE_FRECKLING[Int(defaults.integer(forKey: "ExtensiveFrecklingBothTableViewCell"))]
         }
-        print (age)
         let ageIndex = Int((age-20)/5)
         let t1:Double = Double(ageIndex*5+20)
         let t2: Double = t1+5
@@ -158,7 +155,6 @@ extension ProfileViewController:UITableViewDataSource{
         else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "RegionBothTableViewCell") as! RegionBothTableViewCell
             cell.delegate = self
-
             cell.selectionStyle = .none
             
             return cell
