@@ -20,7 +20,7 @@ protocol displayRaceWarningAlertProtocol: class {
 }
 class ProfileViewController: UIViewController, updateTableViewProtocol, calculateAndDisplayRiskProtocol, displayRaceWarningAlertProtocol {
     func displayRaceWarningAlert() {
-        let alert = UIAlertController(title: "Data on non-whites are sparse", message: "As a result, this tool can only accurately calculate melanoma risk for non-Hispanic white patients", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Data on non-caucasian people is sparse", message: "As a result, this tool can only accurately calculate melanoma risk for caucasian patients.", preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
 
@@ -98,7 +98,7 @@ class ProfileViewController: UIViewController, updateTableViewProtocol, calculat
 
         riskAssessmentDisplayTextView.text = String(risk) + "% risk of developing melanoma"
         
-        riskAssessmentDisplaySubTextView.text = "This means out of every 1000 people living with your information," + String(ratio) + "% are expected to develop melanoma over the 5 years"
+        riskAssessmentDisplaySubTextView.text = "This means that out of every 1000 people living with your information, " + String(ratio) + " are expected to develop melanoma over the next 5 years."
         
         if risk < 3 {
             riskAssessmentDisplayBackgroundBoxView.backgroundColor = #colorLiteral(red: 0.9241562486, green: 0.9777113795, blue: 0.9197322726, alpha: 1)
