@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import CoreML
+import Vision
+import RealmSwift
 
 class DisplayDiagnosisViewController: UIViewController {
     /* used for draggable page
@@ -16,7 +19,7 @@ class DisplayDiagnosisViewController: UIViewController {
         case expanded
         case normal
     }
-//CARD ANIMATION VARIABLES
+    //CARD ANIMATION VARIABLES
     @IBOutlet weak var backingImageView: UIImageView!
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var dimmerView: UIView!
@@ -28,11 +31,21 @@ class DisplayDiagnosisViewController: UIViewController {
     var cardPanStartingTopConstant : CGFloat = 30.0
     var backingImage: UIImage?
     
-
-//VARIABLES
-    @IBOutlet weak var imageVIew: UIImageView!
+    
+    //VARIABLES
+    @IBOutlet weak var moleImageView: UIImageView!
+    @IBOutlet weak var diagnosisLabel: UILabel!
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var xButton: UIButton!
+    
     var pictureOfMole: UIImage?
-
+    var passedInMole = MoleEntry()
+    
+    var xcood = Double()
+    var ycood = Double()
+    let realm = try! Realm()
+    
+    var LoadExistingDiagnosis = Bool()
     override func viewDidLoad() {
         super.viewDidLoad()
         viewDidLoadCardAnimationMethods()
@@ -40,15 +53,79 @@ class DisplayDiagnosisViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        if LoadExistingDiagnosis == false{
+            guard let model = try? VNCoreMLModel(for: moleScanDetectorModel1_copy().model) else {
+                fatalError("Loading CoreML Model Failed.")
+            }
+            let request = VNCoreMLRequest(model: model) { (request, error) in
+                guard let results = request.results as? [VNClassificationObservation] else {
+                    fatalError("Model failed to process image.")
+                }
+                if let firstResult = results.first {
+                    self.diagnosisLabel.text = firstResult.identifier.capitalized
+                }
+            }
+            let handler = VNImageRequestHandler(ciImage: CIImage(image: self.moleImageView.image!)!)
+            do {
+                try handler.perform([request])
+            }
+            catch {
+                print(error)
+            }
+            xButton.isHidden = true
+        }
+        else {
+            self.moleImageView.image = UIImage(data: (passedInMole.imageOfMole!) as Data)
+            self.diagnosisLabel.text = passedInMole.diagnosis
+            saveButton.isHidden = true
+        }
+        
+        if diagnosisLabel.text == "Malignant" || diagnosisLabel.text == "The image below may show a malignant mole. We recommend you contact a dermatologist at your earliest convenience."{
+            cardView.backgroundColor = #colorLiteral(red: 0.9095559716, green: 0.7443320155, blue: 0.7469326854, alpha: 1)
+            diagnosisLabel.textColor = #colorLiteral(red: 1, green: 0.5621168613, blue: 0.5568934083, alpha: 1)
+            diagnosisLabel.text = "The image below may show a malignant mole. We recommend you contact a dermatologist at your earliest convenience."
+        }
+        else {
+            cardView.backgroundColor = #colorLiteral(red: 0.9121155143, green: 0.9780873656, blue: 0.8993980289, alpha: 1)
+            diagnosisLabel.textColor  = #colorLiteral(red: 0.2605797648, green: 0.5291824341, blue: 0.3093243837, alpha: 1)
+            diagnosisLabel.text = "The image below may show a benign mole. We recommend you contact a dermatologist for an evaluation if concerns about your mole persist."
+        }
         showCard()
     }
-   
+    
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
+        
+        do {
+            try self.realm.write{
+                let newEntry = MoleEntry()
+                newEntry.positionOnBodyXCoordinate = xcood
+                newEntry.positionOnBodyYCoordinate = ycood
+                newEntry.diagnosis = diagnosisLabel.text!
+                let data = NSData(data: moleImageView.image!.pngData()!)
+                newEntry.imageOfMole = data
+                realm.add(newEntry)
+            }
+        }
+        catch{
+            print (error)
+        }
+        hideCardAndGoBack()
+    }
+    
+    @IBAction func xButtonPressed(_ sender: UIButton) {
+        hideCardAndGoBack()
+    }
+    
+    
+    
+    
+    
     
     //MARK: - Card Animation Titles
     
     func viewDidLoadCardAnimationMethods(){
         backingImageView.image = backingImage
-        imageVIew.image = pictureOfMole
+        moleImageView.image = pictureOfMole
         cardView.clipsToBounds = true
         cardView.layer.cornerRadius = 10.0
         cardView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]

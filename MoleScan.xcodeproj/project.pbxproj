@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		12D15A96D72D3E1A7DD78B29 /* Pods_MoleScan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491210B44CD6A7E40FE64812 /* Pods_MoleScan.framework */; };
-		890A0247256C072B00724AE6 /* moleScanDetectorModel1 copy.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 890A0246256C072B00724AE6 /* moleScanDetectorModel1 copy.mlmodel */; };
+		890A0247256C072B00724AE6 /* moleScanDetectorModel1_copy.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 890A0246256C072B00724AE6 /* moleScanDetectorModel1_copy.mlmodel */; };
+		890A0259256C231600724AE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 890A0258256C231600724AE6 /* Main.storyboard */; };
 		892F0A4B255B228C00C03569 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F0A4A255B228C00C03569 /* TabBar.swift */; };
 		8938E2C4256079160064656B /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938E2C3256079160064656B /* Doctor.swift */; };
+		894072CA256CB48E000187FF /* MoleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894072C9256CB48E000187FF /* MoleEntry.swift */; };
 		894E5D8D255706BC0091641D /* MyDoctorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894E5D8C255706BC0091641D /* MyDoctorsViewController.swift */; };
 		895D387D255241E5006001FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895D387C255241E5006001FD /* AppDelegate.swift */; };
 		895D387F255241E5006001FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895D387E255241E5006001FD /* SceneDelegate.swift */; };
-		895D3884255241E5006001FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 895D3882255241E5006001FD /* Main.storyboard */; };
 		895D3886255241EA006001FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 895D3885255241EA006001FD /* Assets.xcassets */; };
 		895D3889255241EA006001FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 895D3887255241EA006001FD /* LaunchScreen.storyboard */; };
 		897E94E8255247E500726EC4 /* doctor.json in Resources */ = {isa = PBXBuildFile; fileRef = 897E94E7255247E500726EC4 /* doctor.json */; };
@@ -32,14 +33,15 @@
 /* Begin PBXFileReference section */
 		101A9C66DC4DCFBA87B6CE4E /* Pods-MoleScan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoleScan.debug.xcconfig"; path = "Target Support Files/Pods-MoleScan/Pods-MoleScan.debug.xcconfig"; sourceTree = "<group>"; };
 		491210B44CD6A7E40FE64812 /* Pods_MoleScan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoleScan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		890A0246256C072B00724AE6 /* moleScanDetectorModel1 copy.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "moleScanDetectorModel1 copy.mlmodel"; sourceTree = "<group>"; };
+		890A0246256C072B00724AE6 /* moleScanDetectorModel1_copy.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = moleScanDetectorModel1_copy.mlmodel; sourceTree = "<group>"; };
+		890A0258256C231600724AE6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		892F0A4A255B228C00C03569 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		8938E2C3256079160064656B /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
+		894072C9256CB48E000187FF /* MoleEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoleEntry.swift; sourceTree = "<group>"; };
 		894E5D8C255706BC0091641D /* MyDoctorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDoctorsViewController.swift; sourceTree = "<group>"; };
 		895D3879255241E5006001FD /* MoleScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoleScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		895D387C255241E5006001FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		895D387E255241E5006001FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		895D3883255241E5006001FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		895D3885255241EA006001FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		895D3888255241EA006001FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		895D388A255241EA006001FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,9 +90,10 @@
 		8938E2C62560791F0064656B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				890A0246256C072B00724AE6 /* moleScanDetectorModel1 copy.mlmodel */,
+				890A0246256C072B00724AE6 /* moleScanDetectorModel1_copy.mlmodel */,
 				8938E2C3256079160064656B /* Doctor.swift */,
 				89DB75642567424C002DE110 /* MratConstants.swift */,
+				894072C9256CB48E000187FF /* MoleEntry.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -131,7 +134,7 @@
 		899C1B532552465A00C0C8E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				895D3882255241E5006001FD /* Main.storyboard */,
+				890A0258256C231600724AE6 /* Main.storyboard */,
 				89BF9E832555084800DDCE29 /* DoctorTableViewCell.xib */,
 				897E94E7255247E500726EC4 /* doctor.json */,
 				897E94EA255247EC00726EC4 /* phone.json */,
@@ -213,12 +216,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				890A0259256C231600724AE6 /* Main.storyboard in Resources */,
 				897E94EB255247EC00726EC4 /* phone.json in Resources */,
 				895D3889255241EA006001FD /* LaunchScreen.storyboard in Resources */,
 				895D3886255241EA006001FD /* Assets.xcassets in Resources */,
 				897E94E8255247E500726EC4 /* doctor.json in Resources */,
 				89BF9E852555084800DDCE29 /* DoctorTableViewCell.xib in Resources */,
-				895D3884255241E5006001FD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,9 +275,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				89DEF8C72569F74B002B8F34 /* DisplayDiagnosisViewController.swift in Sources */,
+				894072CA256CB48E000187FF /* MoleEntry.swift in Sources */,
 				895D387D255241E5006001FD /* AppDelegate.swift in Sources */,
 				89DB75652567424D002DE110 /* MratConstants.swift in Sources */,
-				890A0247256C072B00724AE6 /* moleScanDetectorModel1 copy.mlmodel in Sources */,
+				890A0247256C072B00724AE6 /* moleScanDetectorModel1_copy.mlmodel in Sources */,
 				895D387F255241E5006001FD /* SceneDelegate.swift in Sources */,
 				894E5D8D255706BC0091641D /* MyDoctorsViewController.swift in Sources */,
 				892F0A4B255B228C00C03569 /* TabBar.swift in Sources */,
@@ -290,14 +294,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		895D3882255241E5006001FD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				895D3883255241E5006001FD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		895D3887255241EA006001FD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
