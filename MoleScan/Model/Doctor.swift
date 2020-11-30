@@ -14,7 +14,6 @@ class Doctor: Object {
     @objc dynamic var name: String  = ""
     @objc dynamic var phone: String = ""
     @objc dynamic var email: String = ""
-    @objc dynamic var notes: String = ""
 
 }
 

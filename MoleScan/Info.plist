@@ -2,6 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIUserInterfaceStyle</key>
+	<string>.light</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>googlegmail</string>
+		<string>ms-outlook</string>
+		<string>readdle-spark</string>
+		<string>ymail</string>
+	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allow MoleScan to know your current location when using app</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Allow MoleScan to always know your current location</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Molescan requires access to your phone’s camera.</string>
 	<key>CFBundleDevelopmentRegion</key>
