@@ -21,7 +21,7 @@
 		897E94E8255247E500726EC4 /* doctor.json in Resources */ = {isa = PBXBuildFile; fileRef = 897E94E7255247E500726EC4 /* doctor.json */; };
 		897E94EB255247EC00726EC4 /* phone.json in Resources */ = {isa = PBXBuildFile; fileRef = 897E94EA255247EC00726EC4 /* phone.json */; };
 		897E94EF2552496200726EC4 /* PreviewToSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897E94EE2552496200726EC4 /* PreviewToSignUpViewController.swift */; };
-		8984BB9725659A700089B808 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BB9625659A700089B808 /* ProfileViewController.swift */; };
+		8984BB9725659A700089B808 /* RiskAssessmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BB9625659A700089B808 /* RiskAssessmentViewController.swift */; };
 		89BF9E842555084800DDCE29 /* DoctorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BF9E822555084800DDCE29 /* DoctorTableViewCell.swift */; };
 		89BF9E852555084800DDCE29 /* DoctorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89BF9E832555084800DDCE29 /* DoctorTableViewCell.xib */; };
 		89DB75652567424D002DE110 /* MratConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DB75642567424C002DE110 /* MratConstants.swift */; };
@@ -48,7 +48,7 @@
 		897E94E7255247E500726EC4 /* doctor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = doctor.json; sourceTree = "<group>"; };
 		897E94EA255247EC00726EC4 /* phone.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = phone.json; sourceTree = "<group>"; };
 		897E94EE2552496200726EC4 /* PreviewToSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewToSignUpViewController.swift; sourceTree = "<group>"; };
-		8984BB9625659A700089B808 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		8984BB9625659A700089B808 /* RiskAssessmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskAssessmentViewController.swift; sourceTree = "<group>"; };
 		89BF9E822555084800DDCE29 /* DoctorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorTableViewCell.swift; sourceTree = "<group>"; };
 		89BF9E832555084800DDCE29 /* DoctorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorTableViewCell.xib; sourceTree = "<group>"; };
 		89DB75642567424C002DE110 /* MratConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MratConstants.swift; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 				897E94EE2552496200726EC4 /* PreviewToSignUpViewController.swift */,
 				894E5D8C255706BC0091641D /* MyDoctorsViewController.swift */,
 				89BF9E822555084800DDCE29 /* DoctorTableViewCell.swift */,
-				8984BB9625659A700089B808 /* ProfileViewController.swift */,
+				8984BB9625659A700089B808 /* RiskAssessmentViewController.swift */,
 				89DEF8C32569EB82002B8F34 /* ScanMoleViewController.swift */,
 				89DEF8C62569F74B002B8F34 /* DisplayDiagnosisViewController.swift */,
 			);
@@ -285,7 +285,7 @@
 				89BF9E842555084800DDCE29 /* DoctorTableViewCell.swift in Sources */,
 				897E94EF2552496200726EC4 /* PreviewToSignUpViewController.swift in Sources */,
 				89DEF8D4256AB011002B8F34 /* UIView+Snapshot.swift in Sources */,
-				8984BB9725659A700089B808 /* ProfileViewController.swift in Sources */,
+				8984BB9725659A700089B808 /* RiskAssessmentViewController.swift in Sources */,
 				89DEF8C42569EB82002B8F34 /* ScanMoleViewController.swift in Sources */,
 				8938E2C4256079160064656B /* Doctor.swift in Sources */,
 			);

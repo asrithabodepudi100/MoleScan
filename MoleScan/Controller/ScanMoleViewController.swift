@@ -31,12 +31,7 @@ class ScanMoleViewController: UIViewController {
     var moleLayers: [CAShapeLayer] = []
     var molePaths: [CGPoint] = []
     
-    
-    //MENU VARIABLES
-    @IBOutlet weak var menuView: UIView!
-    @IBOutlet weak var menuTransparentView: UIView!
-    var inital: CGFloat!
-
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,16 +41,8 @@ class ScanMoleViewController: UIViewController {
         
         vc.allowsEditing = true
         vc.delegate = self
-        
-        self.inital = self.menuView.frame.origin.x
-        menuTransparentView.isUserInteractionEnabled = false
-        menuTransparentView.backgroundColor = UIColor.clear
-        
-        
-            let gesture = UITapGestureRecognizer(target: self, action: #selector(self.someAction(_:)))
-            // or for swift 2 +
-            _ = UITapGestureRecognizer(target: self, action:  #selector (self.someAction (_:)))
-            self.menuTransparentView.addGestureRecognizer(gesture)
+     
+     
     }
   
     
@@ -93,7 +80,7 @@ class ScanMoleViewController: UIViewController {
         }
     }
     
-    //When user taps on screen, draw purple circle
+    //When user taps on screen, draw circle
     @objc func tappedMe(){
         point = tap.location(in: self.view)
         let circlePath = UIBezierPath(arcCenter: point, radius: CGFloat(10), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
@@ -221,38 +208,3 @@ class ScanMoleViewController: UIViewController {
         
     }
 
-
-//MARK: - Menu Methods Delegate
-
-extension ScanMoleViewController {
-    @IBAction func openMenuButtonPressed(_ sender: UIButton) {
-        self.menuView.alpha = 1
-       UIView.animate(withDuration: 0.3) {
-           self.menuTransparentView.backgroundColor = UIColor.black
-           self.menuTransparentView.alpha = 0.5
-        }
-        menuTransparentView.isUserInteractionEnabled = true
-
-       
-         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut) {
-             self.menuView.frame.origin.x = self.view.frame.origin.x
-         } completion: { _ in ()
-              
-       }
-        tabBarController?.tabBar.backgroundColor = UIColor.clear
-        
-    }
-    
-    @objc func someAction(_ sender:UITapGestureRecognizer){
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut) {
-            self.menuView.frame.origin.x = self.inital
-        } completion: { _ in ()
-            
-        }
-        menuTransparentView.isUserInteractionEnabled = false
-        UIView.animate(withDuration: 0.3) {
-           self.menuTransparentView.backgroundColor = UIColor.clear
-        }
-
-    }
-}

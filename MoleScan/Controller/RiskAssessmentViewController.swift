@@ -20,7 +20,7 @@ protocol calculateAndDisplayRiskProtocol: class {
 protocol displayRaceWarningAlertProtocol: class {
     func displayRaceWarningAlert()
 }
-class ProfileViewController: UIViewController, updateTableViewProtocol, calculateAndDisplayRiskProtocol, displayRaceWarningAlertProtocol {
+class RiskAssessmentViewController: UIViewController, updateTableViewProtocol, calculateAndDisplayRiskProtocol, displayRaceWarningAlertProtocol {
     func displayRaceWarningAlert() {
         let alert = UIAlertController(title: "Data on non-caucasian people is sparse", message: "As a result, this tool can only accurately calculate melanoma risk for caucasian patients.", preferredStyle: .alert)
 
@@ -28,8 +28,6 @@ class ProfileViewController: UIViewController, updateTableViewProtocol, calculat
 
         self.present(alert, animated: true)
     }
-    
-    
 
     let defaults = UserDefaults.standard
     @IBOutlet weak var riskAssessmentTableView: UITableView!
@@ -51,7 +49,6 @@ class ProfileViewController: UIViewController, updateTableViewProtocol, calculat
     func updateTableView() {
         riskAssessmentTableView.reloadData() // you do have an outlet of tableView I assume
     }
-    
     
     func calculateRisk(){
         var r:Double = 1
@@ -119,7 +116,7 @@ class ProfileViewController: UIViewController, updateTableViewProtocol, calculat
 
 //MARK: - Table View Datasource Methods
 
-extension ProfileViewController:UITableViewDataSource{
+extension RiskAssessmentViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if defaults.integer(forKey: "GenderBothTableViewCell") == 0{ //male
             return 13

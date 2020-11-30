@@ -15,5 +15,8 @@ class TabBar: UITabBarController {
         UITabBar.appearance().backgroundImage = UIImage()
         UITabBar.appearance().shadowImage = UIImage()
         UITabBar.appearance().clipsToBounds = true
+        self.selectedIndex = 1
+
     }
+    
 }
