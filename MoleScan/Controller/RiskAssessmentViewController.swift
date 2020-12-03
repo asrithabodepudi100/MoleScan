@@ -8,6 +8,7 @@
 
 //MAKE CODE CLEANER TO INHERITENCE
 import UIKit
+import SideMenu
 
 protocol updateTableViewProtocol: class {
     func updateTableView()
@@ -30,6 +31,8 @@ class RiskAssessmentViewController: UIViewController, updateTableViewProtocol, c
     }
 
     let defaults = UserDefaults.standard
+    var menu = UISideMenuNavigationController(rootViewController: SideMenuViewController())
+
     @IBOutlet weak var riskAssessmentTableView: UITableView!
     @IBOutlet weak var riskAssessmentDisplayTextView: UILabel!
     @IBOutlet weak var riskAssessmentDisplayBackgroundBoxView: UIView!
@@ -45,7 +48,18 @@ class RiskAssessmentViewController: UIViewController, updateTableViewProtocol, c
             defaults.set(20, forKey: "AgeBothTableViewCell")
         }
         calculateRisk()
+        menu.leftSide = true
+        SideMenuManager.default.menuLeftNavigationController = menu
+        SideMenuManager.default.menuFadeStatusBar = false
+        UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.9488552213, green: 0.9487094283, blue: 0.9693081975, alpha: 1)
+        UINavigationBar.appearance().shadowImage = UIImage()
     }
+    
+    @IBAction func openSideMenuButtonPressed(_ sender: UIButton) {
+        present(menu, animated: true)
+        navigationController?.navigationBar.barStyle = .default
+    }
+    
     func updateTableView() {
         riskAssessmentTableView.reloadData() // you do have an outlet of tableView I assume
     }

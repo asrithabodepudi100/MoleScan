@@ -35,6 +35,7 @@ class DisplayDiagnosisViewController: UIViewController {
     //VARIABLES
     @IBOutlet weak var moleImageView: UIImageView!
     @IBOutlet weak var diagnosisLabel: UILabel!
+    @IBOutlet weak var diagnosisSubLabel: UILabel!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var xButton: UIButton!
     
@@ -80,15 +81,21 @@ class DisplayDiagnosisViewController: UIViewController {
             saveButton.isHidden = true
         }
         
-        if diagnosisLabel.text == "Malignant" || diagnosisLabel.text == "The image below may show a malignant mole. We recommend you contact a dermatologist at your earliest convenience."{
-            cardView.backgroundColor = #colorLiteral(red: 0.9095559716, green: 0.7443320155, blue: 0.7469326854, alpha: 1)
+        if diagnosisLabel.text == "Malignant" || diagnosisLabel.text == "The mole present may be malignant"{
+            cardView.backgroundColor = #colorLiteral(red: 1, green: 0.8461767401, blue: 0.849131756, alpha: 1)
+            diagnosisLabel.textColor = #colorLiteral(red: 0.9983811975, green: 0.3601943254, blue: 0.2774392366, alpha: 1)
             diagnosisLabel.textColor = #colorLiteral(red: 1, green: 0.5621168613, blue: 0.5568934083, alpha: 1)
-            diagnosisLabel.text = "The image below may show a malignant mole. We recommend you contact a dermatologist at your earliest convenience."
+
+            diagnosisLabel.text = "The mole present may be malignant"
+            diagnosisSubLabel.text = "We reccomend contacting your health care provider immediately or getting in touch with a specialist using the MyDoctors page tab. If you believe there has been a mistake, please contact our team."
         }
         else {
             cardView.backgroundColor = #colorLiteral(red: 0.9121155143, green: 0.9780873656, blue: 0.8993980289, alpha: 1)
             diagnosisLabel.textColor  = #colorLiteral(red: 0.2605797648, green: 0.5291824341, blue: 0.3093243837, alpha: 1)
-            diagnosisLabel.text = "The image below may show a benign mole. We recommend you contact a dermatologist for an evaluation if concerns about your mole persist."
+            diagnosisLabel.text = "The mole present may be benign"
+            diagnosisSubLabel.textColor = #colorLiteral(red: 0.3665700024, green: 0.7417052292, blue: 0.4350099593, alpha: 1)
+            diagnosisSubLabel.text = "We recommend you contact a dermatologist for an evaluation if concerns about your mole persist. If you believe there has been a mistake, please contact our team."
+
         }
         showCard()
     }

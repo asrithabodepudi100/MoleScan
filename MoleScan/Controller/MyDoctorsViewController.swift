@@ -9,6 +9,7 @@ import UIKit
 import RealmSwift
 import MapKit
 import MessageUI
+import SideMenu
 
 class MyDoctorsViewController: UIViewController{
    
@@ -18,20 +19,20 @@ class MyDoctorsViewController: UIViewController{
     var locationManager:CLLocationManager!
     var currentLocationStr = "Current location"
     var mRegion: MKCoordinateRegion!
-    
-    @IBOutlet weak var myDoctorsBackgroundView: UIView!
-    
+    var menu = UISideMenuNavigationController(rootViewController: SideMenuViewController())
+
+    @IBOutlet weak var myDoctorsScrollView: UIScrollView!
     @IBOutlet weak var searchForDermatologistsNearMeSearchBar: UISearchBar!
     @IBOutlet weak var addNewDoctorButton: UIButton!
     @IBOutlet weak var myDoctorsTableView: UITableView!
+    @IBOutlet weak var myDoctorsTableViewHeight: NSLayoutConstraint!
+    
     @IBOutlet weak var searchForDermatologistsNearMeMapView: MKMapView!
     @IBAction func addNewDoctorButtonPressed(_ sender: Any) {
         createNewDoctor()
         myDoctorsTableView.reloadData()
-        DispatchQueue.main.async {
-            let indexPath = IndexPath(row: (self.realm.objects(Doctor.self).count)-1, section: 0)
-            self.myDoctorsTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
-        }
+        let bottomOffset = CGPoint(x: 0, y: myDoctorsScrollView.contentSize.height - myDoctorsScrollView.bounds.size.height)
+        myDoctorsScrollView.setContentOffset(bottomOffset, animated: true)
     }
     func createNewDoctor(){
         let newDoctor = Doctor()
@@ -58,22 +59,50 @@ class MyDoctorsViewController: UIViewController{
         self.myDoctorsTableView.tableFooterView = UIView()
         self.myDoctorsTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         self.myDoctorsTableView.backgroundColor = UIColor.clear
-        
+
         searchForDermatologistsNearMeSearchBar.backgroundImage = UIImage()
         addNewDoctorButton.layer.cornerRadius = 10
         
         
         myDoctorsTableView.reloadData()
         searchForDermatologistsNearMeMapView.layer.cornerRadius = 15
-     /*   NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)*/
         
-     
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
+        
+        menu.leftSide = true
+        SideMenuManager.default.menuLeftNavigationController = menu
+        SideMenuManager.default.menuFadeStatusBar = false
+        UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.9488552213, green: 0.9487094283, blue: 0.9693081975, alpha: 1)
+        UINavigationBar.appearance().shadowImage = UIImage()
     }
     override func viewDidAppear(_ animated: Bool) {
         determineCurrentLocation()
-        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        myDoctorsTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+        myDoctorsTableView.reloadData()
+        registerNotifications()
+
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        myDoctorsTableView.removeObserver(self, forKeyPath: "contentSize")
+    }
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "contentSize"{
+                if let newvalue = change?[.newKey]{
+                    let newsize = newvalue as! CGSize
+                    self.myDoctorsTableViewHeight.constant = newsize.height
+                }
+        }
+    }
+    @IBAction func openSideMenuButtonPressed(_ sender: UIButton) {
+        present(menu, animated: true)
+        navigationController?.navigationBar.barStyle = .default
+    }
+    
+    
 }
     //MARK: - MapKit Methods
     
@@ -158,10 +187,6 @@ extension MyDoctorsViewController: UISearchBarDelegate, CLLocationManagerDelegat
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(MyDoctorsViewController.reload), object: nil)
         self.perform(#selector(MyDoctorsViewController.reload), with: nil, afterDelay: 0.5)
     }
-        
-    @objc func reload() {
-        print ("enter button pressed ulajflkjs")
-    }
 }
 
 
@@ -245,8 +270,6 @@ extension MyDoctorsViewController: UITableViewDataSource{
     }
 }
 
-
-
 //MARK: - Text View Delegate
 
 extension MyDoctorsViewController: UITextViewDelegate{
@@ -258,8 +281,6 @@ extension MyDoctorsViewController: UITextViewDelegate{
             myDoctorsTableView.reloadData()
         }
     }
-    
-    
     func textViewDidEndEditing(_ textView: UITextView) {
         updateRealm(textView)
     }
@@ -269,13 +290,11 @@ extension MyDoctorsViewController: UITextViewDelegate{
         if let indexPath = self.myDoctorsTableView.indexPathForRow(at: buttonPosition){
             do {
                 try! realm.write {
-                    print ("OMFGLKDSJFLJSLKJFLK:J")
 
                     if textView.accessibilityIdentifier == "doctorTypeTextView"{
                         realm.objects(Doctor.self)[indexPath[1]].doctorType = (textView.text!)
                     }
                     else if textView.accessibilityIdentifier == "nameTextView"{
-                        print ("alksjdflkajsdl;fkjasl;djf:J")
                         //print (realm.obje)
                         realm.objects(Doctor.self)[indexPath[1]].name = (textView.text!)
                         print ("hellooo")
@@ -305,19 +324,6 @@ extension MyDoctorsViewController: UITextViewDelegate{
 
 extension MyDoctorsViewController
 {
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.myDoctorsBackgroundView.frame.origin.y == 0 {
-                self.myDoctorsBackgroundView.frame.origin.y -= keyboardSize.height
-            }
-        }
-    }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if self.myDoctorsBackgroundView.frame.origin.y != 0 {
-            self.myDoctorsBackgroundView.frame.origin.y = 0
-        }
-    }
     func hideKeyboardWhenUserTapsElsewhereOnScreen()
     {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(
@@ -331,6 +337,19 @@ extension MyDoctorsViewController
     @objc func dismissKeyboard()
     {
         view.endEditing(true)
+    }
+    private func registerNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    @objc private func keyboardWillShow(notification: NSNotification){
+        guard let keyboardFrame = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        myDoctorsScrollView.contentInset.bottom = view.convert(keyboardFrame.cgRectValue, from: nil).size.height
+    }
+
+    @objc private func keyboardWillHide(notification: NSNotification){
+        myDoctorsScrollView.contentInset.bottom = 0
     }
 }
 
@@ -397,3 +416,7 @@ extension MyDoctorsViewController: MFMailComposeViewControllerDelegate, PhoneNum
         return emailPred.evaluate(with: email)
     }
 }
+
+
+
+

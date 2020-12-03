@@ -7,14 +7,16 @@
 
 import UIKit
 import RealmSwift
-
+import SideMenu
+import Lottie
 class ScanMoleViewController: UIViewController {
-    
+    var menu = UISideMenuNavigationController(rootViewController: SideMenuViewController())
+    private var animationView: AnimationView?
+
     //IBOUTLETS
     @IBOutlet weak var takePhotoButton: UIButton!
     @IBOutlet weak var takePhotoButtonBackgroundView: UIView!
     @IBOutlet weak var bodyImageVew: UIImageView!
-    
     @IBOutlet weak var instructionsBackgroundBox: UIView!
     
     //VARIABLES
@@ -41,13 +43,26 @@ class ScanMoleViewController: UIViewController {
         
         vc.allowsEditing = true
         vc.delegate = self
-     
-     
+        
+        
+        menu.leftSide = true
+        SideMenuManager.default.menuLeftNavigationController = menu
+        SideMenuManager.default.menuFadeStatusBar = false
+        UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.9488552213, green: 0.9487094283, blue: 0.9693081975, alpha: 1)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        
     }
-  
     
-    
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
+    }
+    override var prefersStatusBarHidden: Bool{
+        return false
+    }
+    @IBAction func openSideMenuButtonPressed(_ sender: UIButton) {
+        present(menu, animated: true)
+        navigationController?.navigationBar.barStyle = .default
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -64,12 +79,12 @@ class ScanMoleViewController: UIViewController {
                 let moleLayer = CAShapeLayer()
                 molePaths.append(mole)
                 moleLayer.path = circlePath.cgPath
-                if object.diagnosis == "The image below may show a benign mole. We recommend you contact a dermatologist for an evaluation if concerns about your mole persist."{
+                if object.diagnosis == "The mole present may be benign"{
                     
                     moleLayer.fillColor = #colorLiteral(red: 0, green: 0.3884513974, blue: 0, alpha: 1)
                     moleLayer.strokeColor = #colorLiteral(red: 0, green: 0.3884513974, blue: 0, alpha: 1)
                 }
-                else if object.diagnosis == "The image below may show a malignant mole. We recommend you contact a dermatologist at your earliest convenience."{
+                else if object.diagnosis == "The mole present may be malignant"{
                     moleLayer.fillColor = #colorLiteral(red: 0.9983811975, green: 0.3601943254, blue: 0.2774392366, alpha: 1)
                     moleLayer.strokeColor = #colorLiteral(red: 0.9983811975, green: 0.3601943254, blue: 0.2774392366, alpha: 1)
                 }
@@ -133,6 +148,16 @@ class ScanMoleViewController: UIViewController {
                 assertionFailure("No view controller ID DisplayDiagnosisViewController in storyboard")
                 return
             }
+           /* animationView = .init(name: "malignOrBenignLoadingScreen")
+            animationView!.frame = view.bounds
+            animationView!.contentMode = .scaleAspectFit
+            animationView!.loopMode = .loop
+            animationView!.animationSpeed = 0.75
+            self.view.addSubview(animationView!)
+            animationView!.play()
+            if displayDiagnosisVC.isViewLoaded == true{
+                animationView?.isHidden = true
+            }*/
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1 , execute: {
                 displayDiagnosisVC.modalPresentationStyle = .fullScreen
                 displayDiagnosisVC.pictureOfMole = self.moleImage

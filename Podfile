@@ -8,5 +8,6 @@ target 'MoleScan' do
   # Pods for MoleScan
     pod 'lottie-ios'
     pod 'RealmSwift'
+    pod 'SideMenu'
 
 end
