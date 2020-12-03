@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		12D15A96D72D3E1A7DD78B29 /* Pods_MoleScan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491210B44CD6A7E40FE64812 /* Pods_MoleScan.framework */; };
+		8900C9CE25787B7900501450 /* malignOrBenignLoadingScreen.json in Resources */ = {isa = PBXBuildFile; fileRef = 8900C9CD25787B7900501450 /* malignOrBenignLoadingScreen.json */; };
 		890A0247256C072B00724AE6 /* moleScanDetectorModel1_copy.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 890A0246256C072B00724AE6 /* moleScanDetectorModel1_copy.mlmodel */; };
 		890A0259256C231600724AE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 890A0258256C231600724AE6 /* Main.storyboard */; };
 		892F0A4B255B228C00C03569 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F0A4A255B228C00C03569 /* TabBar.swift */; };
@@ -17,22 +18,29 @@
 		895D387D255241E5006001FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895D387C255241E5006001FD /* AppDelegate.swift */; };
 		895D387F255241E5006001FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895D387E255241E5006001FD /* SceneDelegate.swift */; };
 		895D3886255241EA006001FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 895D3885255241EA006001FD /* Assets.xcassets */; };
-		895D3889255241EA006001FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 895D3887255241EA006001FD /* LaunchScreen.storyboard */; };
 		897E94E8255247E500726EC4 /* doctor.json in Resources */ = {isa = PBXBuildFile; fileRef = 897E94E7255247E500726EC4 /* doctor.json */; };
 		897E94EB255247EC00726EC4 /* phone.json in Resources */ = {isa = PBXBuildFile; fileRef = 897E94EA255247EC00726EC4 /* phone.json */; };
 		897E94EF2552496200726EC4 /* PreviewToSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897E94EE2552496200726EC4 /* PreviewToSignUpViewController.swift */; };
 		8984BB9725659A700089B808 /* RiskAssessmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BB9625659A700089B808 /* RiskAssessmentViewController.swift */; };
 		89BF9E842555084800DDCE29 /* DoctorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BF9E822555084800DDCE29 /* DoctorTableViewCell.swift */; };
 		89BF9E852555084800DDCE29 /* DoctorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89BF9E832555084800DDCE29 /* DoctorTableViewCell.xib */; };
+		89CCE62E257871E500DD18F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CCE62D257871E500DD18F6 /* LaunchScreen.storyboard */; };
+		89D81E1025783C0F0004C57F /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 89D81E0F25783C0F0004C57F /* loading.json */; };
 		89DB75652567424D002DE110 /* MratConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DB75642567424C002DE110 /* MratConstants.swift */; };
 		89DEF8C42569EB82002B8F34 /* ScanMoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DEF8C32569EB82002B8F34 /* ScanMoleViewController.swift */; };
 		89DEF8C72569F74B002B8F34 /* DisplayDiagnosisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DEF8C62569F74B002B8F34 /* DisplayDiagnosisViewController.swift */; };
 		89DEF8D4256AB011002B8F34 /* UIView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DEF8D3256AB011002B8F34 /* UIView+Snapshot.swift */; };
+		89FB3B202575494D009F33E3 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FB3B1E2575494D009F33E3 /* SideMenuViewController.swift */; };
+		89FB3B212575494D009F33E3 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89FB3B1F2575494D009F33E3 /* SideMenuViewController.xib */; };
+		89FB3B2C257590E0009F33E3 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FB3B2A257590E0009F33E3 /* SideMenuTableViewCell.swift */; };
+		89FB3B2D257590E0009F33E3 /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89FB3B2B257590E0009F33E3 /* SideMenuTableViewCell.xib */; };
+		89FB3B352575A15F009F33E3 /* SideMenuWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FB3B342575A15F009F33E3 /* SideMenuWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		101A9C66DC4DCFBA87B6CE4E /* Pods-MoleScan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoleScan.debug.xcconfig"; path = "Target Support Files/Pods-MoleScan/Pods-MoleScan.debug.xcconfig"; sourceTree = "<group>"; };
 		491210B44CD6A7E40FE64812 /* Pods_MoleScan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoleScan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8900C9CD25787B7900501450 /* malignOrBenignLoadingScreen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = malignOrBenignLoadingScreen.json; sourceTree = "<group>"; };
 		890A0246256C072B00724AE6 /* moleScanDetectorModel1_copy.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = moleScanDetectorModel1_copy.mlmodel; sourceTree = "<group>"; };
 		890A0258256C231600724AE6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		892F0A4A255B228C00C03569 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
@@ -43,7 +51,6 @@
 		895D387C255241E5006001FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		895D387E255241E5006001FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		895D3885255241EA006001FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		895D3888255241EA006001FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		895D388A255241EA006001FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		897E94E7255247E500726EC4 /* doctor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = doctor.json; sourceTree = "<group>"; };
 		897E94EA255247EC00726EC4 /* phone.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = phone.json; sourceTree = "<group>"; };
@@ -51,10 +58,17 @@
 		8984BB9625659A700089B808 /* RiskAssessmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskAssessmentViewController.swift; sourceTree = "<group>"; };
 		89BF9E822555084800DDCE29 /* DoctorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorTableViewCell.swift; sourceTree = "<group>"; };
 		89BF9E832555084800DDCE29 /* DoctorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorTableViewCell.xib; sourceTree = "<group>"; };
+		89CCE62D257871E500DD18F6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		89D81E0F25783C0F0004C57F /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loading.json; path = ../../../loading.json; sourceTree = "<group>"; };
 		89DB75642567424C002DE110 /* MratConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MratConstants.swift; sourceTree = "<group>"; };
 		89DEF8C32569EB82002B8F34 /* ScanMoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanMoleViewController.swift; sourceTree = "<group>"; };
 		89DEF8C62569F74B002B8F34 /* DisplayDiagnosisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDiagnosisViewController.swift; sourceTree = "<group>"; };
 		89DEF8D3256AB011002B8F34 /* UIView+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Snapshot.swift"; sourceTree = "<group>"; };
+		89FB3B1E2575494D009F33E3 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		89FB3B1F2575494D009F33E3 /* SideMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
+		89FB3B2A257590E0009F33E3 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		89FB3B2B257590E0009F33E3 /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
+		89FB3B342575A15F009F33E3 /* SideMenuWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuWebViewController.swift; sourceTree = "<group>"; };
 		B2448050CEA39049C359BFB9 /* Pods-MoleScan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoleScan.release.xcconfig"; path = "Target Support Files/Pods-MoleScan/Pods-MoleScan.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,7 +104,6 @@
 		8938E2C62560791F0064656B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				890A0246256C072B00724AE6 /* moleScanDetectorModel1_copy.mlmodel */,
 				8938E2C3256079160064656B /* Doctor.swift */,
 				89DB75642567424C002DE110 /* MratConstants.swift */,
 				894072C9256CB48E000187FF /* MoleEntry.swift */,
@@ -121,10 +134,12 @@
 			children = (
 				895D387C255241E5006001FD /* AppDelegate.swift */,
 				895D387E255241E5006001FD /* SceneDelegate.swift */,
+				890A0246256C072B00724AE6 /* moleScanDetectorModel1_copy.mlmodel */,
 				8938E2C62560791F0064656B /* Model */,
 				899C1B532552465A00C0C8E4 /* View */,
 				89ADF8932555012800B7971F /* Controller */,
-				895D3887255241EA006001FD /* LaunchScreen.storyboard */,
+				89FB3B3225759FEA009F33E3 /* Side Menu */,
+				89CCE62D257871E500DD18F6 /* LaunchScreen.storyboard */,
 				895D388A255241EA006001FD /* Info.plist */,
 				895D3885255241EA006001FD /* Assets.xcassets */,
 			);
@@ -137,6 +152,8 @@
 				890A0258256C231600724AE6 /* Main.storyboard */,
 				89BF9E832555084800DDCE29 /* DoctorTableViewCell.xib */,
 				897E94E7255247E500726EC4 /* doctor.json */,
+				89D81E0F25783C0F0004C57F /* loading.json */,
+				8900C9CD25787B7900501450 /* malignOrBenignLoadingScreen.json */,
 				897E94EA255247EC00726EC4 /* phone.json */,
 				892F0A4A255B228C00C03569 /* TabBar.swift */,
 				89DEF8D3256AB011002B8F34 /* UIView+Snapshot.swift */,
@@ -155,6 +172,18 @@
 				89DEF8C62569F74B002B8F34 /* DisplayDiagnosisViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		89FB3B3225759FEA009F33E3 /* Side Menu */ = {
+			isa = PBXGroup;
+			children = (
+				89FB3B1F2575494D009F33E3 /* SideMenuViewController.xib */,
+				89FB3B2B257590E0009F33E3 /* SideMenuTableViewCell.xib */,
+				89FB3B1E2575494D009F33E3 /* SideMenuViewController.swift */,
+				89FB3B2A257590E0009F33E3 /* SideMenuTableViewCell.swift */,
+				89FB3B342575A15F009F33E3 /* SideMenuWebViewController.swift */,
+			);
+			path = "Side Menu";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,10 +247,14 @@
 			files = (
 				890A0259256C231600724AE6 /* Main.storyboard in Resources */,
 				897E94EB255247EC00726EC4 /* phone.json in Resources */,
-				895D3889255241EA006001FD /* LaunchScreen.storyboard in Resources */,
+				8900C9CE25787B7900501450 /* malignOrBenignLoadingScreen.json in Resources */,
 				895D3886255241EA006001FD /* Assets.xcassets in Resources */,
 				897E94E8255247E500726EC4 /* doctor.json in Resources */,
+				89FB3B212575494D009F33E3 /* SideMenuViewController.xib in Resources */,
 				89BF9E852555084800DDCE29 /* DoctorTableViewCell.xib in Resources */,
+				89FB3B2D257590E0009F33E3 /* SideMenuTableViewCell.xib in Resources */,
+				89CCE62E257871E500DD18F6 /* LaunchScreen.storyboard in Resources */,
+				89D81E1025783C0F0004C57F /* loading.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +308,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				89DEF8C72569F74B002B8F34 /* DisplayDiagnosisViewController.swift in Sources */,
+				89FB3B202575494D009F33E3 /* SideMenuViewController.swift in Sources */,
 				894072CA256CB48E000187FF /* MoleEntry.swift in Sources */,
+				89FB3B2C257590E0009F33E3 /* SideMenuTableViewCell.swift in Sources */,
 				895D387D255241E5006001FD /* AppDelegate.swift in Sources */,
 				89DB75652567424D002DE110 /* MratConstants.swift in Sources */,
 				890A0247256C072B00724AE6 /* moleScanDetectorModel1_copy.mlmodel in Sources */,
@@ -285,6 +320,7 @@
 				89BF9E842555084800DDCE29 /* DoctorTableViewCell.swift in Sources */,
 				897E94EF2552496200726EC4 /* PreviewToSignUpViewController.swift in Sources */,
 				89DEF8D4256AB011002B8F34 /* UIView+Snapshot.swift in Sources */,
+				89FB3B352575A15F009F33E3 /* SideMenuWebViewController.swift in Sources */,
 				8984BB9725659A700089B808 /* RiskAssessmentViewController.swift in Sources */,
 				89DEF8C42569EB82002B8F34 /* ScanMoleViewController.swift in Sources */,
 				8938E2C4256079160064656B /* Doctor.swift in Sources */,
@@ -292,17 +328,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		895D3887255241EA006001FD /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				895D3888255241EA006001FD /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		895D388B255241EA006001FD /* Debug */ = {
