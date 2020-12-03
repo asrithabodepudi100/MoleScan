@@ -187,6 +187,9 @@ extension MyDoctorsViewController: UISearchBarDelegate, CLLocationManagerDelegat
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(MyDoctorsViewController.reload), object: nil)
         self.perform(#selector(MyDoctorsViewController.reload), with: nil, afterDelay: 0.5)
     }
+    @objc func reload(){
+        
+    }
 }
 
 

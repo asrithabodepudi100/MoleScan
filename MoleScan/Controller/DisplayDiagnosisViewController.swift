@@ -55,6 +55,7 @@ class DisplayDiagnosisViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if LoadExistingDiagnosis == false{
+            saveButton.layer.cornerRadius = 10
             guard let model = try? VNCoreMLModel(for: moleScanDetectorModel1_copy().model) else {
                 fatalError("Loading CoreML Model Failed.")
             }

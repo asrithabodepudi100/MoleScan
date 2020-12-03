@@ -12,17 +12,23 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, loadWebVi
     let defaults = UserDefaults.standard
 
     func loadWebView(titleLabel: String) {
-        print ("HIHIHIHIHIHI")
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc: UIViewController = storyboard.instantiateViewController(withIdentifier: "SideMenuWebViewController") as UIViewController
         
         if titleLabel == "Help Center"{
             //need to record video
-            defaults.set("https://www.raywenderlich.com/9009-requesting-app-ratings-and-reviews-tutorial-for-ios", forKey: "url")
+            defaults.set("bit.ly/tonneliertech1", forKey: "url")
         }
         else if titleLabel == "Feedback"{
-            //need to figure out 
-            defaults.set("https://www.raywenderlich.com/9009-requesting-app-ratings-and-reviews-tutorial-for-ios", forKey: "url")
+            //redirects to app store 
+            var components = URLComponents(url: URL(string: "https://apps.apple.com/us/app/mole-scan-diagnosis-tool/id1543111816")!, resolvingAgainstBaseURL: false)
+            components?.queryItems = [
+              URLQueryItem(name: "action", value: "write-review")
+            ]
+            guard let writeReviewURL = components?.url else {
+              return
+            }
+            UIApplication.shared.open(writeReviewURL)
         }
         else if titleLabel == "Coming Soon"{
             defaults.set("https://vidushimeel.github.io/tonnelier/ComingSoon.html", forKey: "url")
