@@ -31,14 +31,12 @@ class SideMenuWebViewController: UIViewController, WKNavigationDelegate {
     override func viewWillAppear(_ animated: Bool) {
         let url = defaults.string(forKey: "url")
         print ("FUCK MY LIFE")
-        print (url!)
-        webView.load(URLRequest(url:  URL(string: url!)!))
+        webView.load(URLRequest(url:  URL(string: url ?? "https://vidushimeel.github.io/tonnelier/index.html")!))
 
         webView.allowsBackForwardNavigationGestures = true
         webView.navigationDelegate = self
     }
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-       print ("HIHIHI")
         animationView?.isHidden = true
 
    }
